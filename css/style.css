@@ -1,0 +1,543 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i,700,700i&display=swap');
+
+
+/* Styles contant between layouts */
+
+body,
+html {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+}
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
+}
+h1{
+  color: white;
+  position: relative;
+}
+main {
+  display: flex;
+  width: 100vw;
+}
+header{
+  display: flex;
+  justify-content: space-around;
+}
+.column {
+  position: relative;
+  height: 85vh;
+  display: flex;
+}
+.button-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.button {
+  position: relative;
+  color: white;
+  padding: 5px;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+#column1 {
+  flex-direction: column;
+}
+/* slideshow css */
+
+/* Hide the images by default */
+
+.button::-webkit-scrollbar { width: 0 !important }
+.spotify {
+  width: 100%;
+  display: none;
+}
+#electronic{
+  display: block;
+}
+#quote-wrapper{
+  height: 25vh;
+  /* background-color: rgba(0,0,0,.9); */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+#quotearea{
+  max-height: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+#quotearea span{
+  /* line-height: 0px; */
+}
+#quotearea p{
+  display: block;
+  overflow-y: scroll;
+  position: relative;
+  color: #1ed62d;
+  margin: 0;
+  /* height:80%; */
+}
+.txt::-webkit-scrollbar { width: 0 !important }
+.control{
+  display: flex;
+  justify-content: space-between;
+}
+form div{
+  display: flex;
+  justify-content: space-between;
+}
+label{
+  font-size: 12px;
+  padding: 5px;
+}
+.range {
+  width: 20%;
+}
+.numberinput{
+  width: 30px;
+}
+.pitch-value{
+  display: none;
+}
+.rate-value{
+  display: none;
+}
+select {
+  width: 70%;
+}
+	#column2::-webkit-scrollbar { width: 0 !important }
+	#feed::-webkit-scrollbar { width: 0 !important }
+#feed {
+  /* overflow-y: scroll; */
+}
+#feed h4 {
+  margin-top: 0px;
+}
+
+#pdf{
+  display: none;
+  margin:0;
+}
+#pdf a{
+  position: absolute;
+  bottom: 0;
+  padding: 5px;
+  background-color: rgba(0,0,0,.7)
+}
+#column2 a{
+  color: #1ed62d;
+}
+#column2 p{
+  margin-top: 0px;
+  font-size: 12px;
+  margin-bottom: 35px;
+}
+#column2 h4{
+  margin-bottom: 5px;
+}
+#column3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#chess{
+  display: block;
+}
+
+
+
+
+/* mobile Style */
+@media only screen and (max-width: 425px) {
+	body{
+		overflow: hidden;
+	}
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+		overflow: hidden;
+  }
+  header{
+  width: 100vw;
+  justify-content: center;
+  /* background-color: red; */
+  position: relative;
+	overflow: hidden;
+  /* padding-left: 5vw; */
+	padding-bottom: 5px;
+  }
+  h1 {
+    /* color: green; */
+    font-size: 24px;
+    text-align: left;
+  }
+  main{
+    position: relative;
+    overflow-x: scroll;
+		overflow-y: hidden;
+    flex-direction: row;
+    /* width: 100% */
+    margin-bottom: 10px;
+    scroll-snap-type: x mandatory;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .column {
+    /* background-color: white; */
+    width:90vw;
+    height:100%;
+    /* max-width:425px; */
+		position: relative;
+    scroll-snap-align: start;
+    /* overflow-x: scroll; */
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  #column1{
+    /* padding-left: 5vw;
+    padding-right: 5vw; */
+    justify-content: space-between;
+  }
+  #slideshowbox {
+    position: relative;
+    width:90vw;
+    height:28vh;
+    /* border-bottom: 2px solid white; */
+  }
+.mySlides {
+	display: none;
+	height: inherit;
+	width: inherit;
+}
+.mySlides img {
+	max-width: 100%;
+	max-height: 100%;
+	position: absolute;
+	top: 0%;
+	left: 50%;
+	transform: translate(-50%, 0%);
+}
+  .spotify {
+    height: 30vh;
+  }
+  #quotearea{
+    max-height: 40%;
+    display: none;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+	#music-container{
+		padding-top:20px;
+	}
+  #column2{
+    width: 90vw;
+		max-height: 100vh;
+		position:static;
+		/* overflow-y: scroll; */
+  }
+	#feed {
+		overflow-y: scroll;
+		height: 95vh;
+		width:100vw;
+	}
+  #feed h4{
+    /* width: 65vw; */
+  }
+  #pdf{
+    width: 90vw;
+				height: 90vh;
+  }
+	#column3{
+		justify-content: space-around;
+		height: 90vh;
+		width:90vw;
+		/* overflow-y: scroll; */
+	}
+	#chart-container {
+	  width: 90vw;
+	  height: 20vh;
+	}
+	#brain-graph {
+	  width: 100%;
+	}
+	#game-container{
+		height:100%;
+				/* overflow: hidden; */
+	}
+	#game-box{
+		height: 90%;
+				/* overflow: hidden; */
+
+	}
+  .game {
+    display: none;
+    height: 100%;
+    width: 90vw;
+    text-align: center;
+  }
+	#chess{
+		position: relative; 
+				overflow: hidden;
+	}
+}
+
+/* tablet or middle styles */
+@media only screen and (min-width:426px) and (max-width: 960px){
+	body{
+		overflow-y: hidden;
+		height: 100vh;
+	}
+	canvas {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		overflow: hidden;
+	}
+
+header {
+	width: 100vw;
+	justify-content: center;
+	/* background-color: red; */
+	position: relative;
+	overflow: hidden;
+	/* padding-left: 5vw; */
+	/* padding-bottom: 5px; */
+	height:10%;
+	}
+	h1 {
+		/* color: green; */
+		font-size: 38px;
+		text-align: left;
+	}
+	main{
+		position: relative;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		flex-direction: row;
+		/* width: 100% */
+		margin-bottom: 10px;
+		scroll-snap-type: x mandatory;
+		justify-content: flex-start;
+		padding: 0;
+		height:90%;
+	}
+	.column {
+		/* background-color: white; */
+		width:90vw;
+		height:90%;
+		/* max-width:425px; */
+		position: relative;
+		scroll-snap-align: start;
+		/* overflow-x: scroll; */
+		padding-left: 5vw;
+		padding-right: 5vw;
+	}
+	#column1{
+		/* padding-left: 5vw;
+		padding-right: 5vw; */
+		justify-content: space-between;
+	}
+	#slideshowbox {
+		position: relative;
+		width:90vw;
+		height:28vh;
+		/* border-bottom: 2px solid white; */
+	}
+.mySlides {
+	display: none;
+	height: inherit;
+	width: inherit;
+}
+.mySlides img {
+	max-width: 100%;
+	max-height: 28vh;
+	position: absolute;
+	top: 0%;
+	left: 50%;
+	transform: translate(-50%, 0%);
+}
+	.spotify {
+		height: 30vh;
+	}
+	#quotearea{
+		max-height: 40%;
+		display: none;
+		flex-direction: column;
+		margin-bottom: 10px;
+	}
+	#music-container{
+		padding-top:20px;
+	}
+	#column2{
+		width: 90vw;
+		max-height: 90vh;
+		position:static;
+		/* overflow-y: scroll; */
+	}
+	#feed {
+		overflow-y: scroll;
+		height: 95vh;
+		width:100vw;
+	}
+	#feed h4{
+		/* width: 65vw; */
+	}
+	#pdf{
+		width: 90vw;
+		height: 90vh;
+	}
+	#column3{
+		justify-content: space-around;
+		height: 90vh;
+		width:90vw;
+		/* overflow-y: scroll; */
+	}
+	#chart-container {
+		width: 90vw;
+		height: 20vh;
+	}
+	#brain-graph {
+		width: 100%;
+	}
+	#game-container{
+		height:100%;
+				/* overflow: hidden; */
+	}
+	#game-box{
+		height: 100%;
+				/* overflow: hidden; */
+
+	}
+	.game {
+		display: none;
+		height: 100%;
+		width: 90vw;
+		text-align: center;
+	}
+	#chess{
+				/* overflow: hidden; */
+	}
+}
+
+/* desktop styles */
+@media only screen and (min-width: 961px){
+	body{
+		overflow:hidden;
+	}
+  h1{
+    width: 92.66%;
+		font-size: 48px;
+		padding-bottom: 10px;
+  }
+  main {
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+  }
+	.column{
+		height:90vh;
+	}
+  #column1 {
+    width: 15%;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #slideshowbox {
+		position: relative;
+		width:100%;
+		  /* border-bottom: 2px solid white; */
+
+    height:20vh;
+    /* border-bottom: 2px solid white; */
+  }
+	.mySlides {
+	  display: none;
+	  height: inherit;
+	  width: inherit;
+	}
+	.mySlides img {
+	  max-width: 100%;
+	  max-height: 100%;
+	  position: absolute;
+	  top: 0%;
+	  left: 50%;
+	  transform: translate(-50%, 0%);
+	}
+  .spotify {
+    height: 25vh;
+  }
+  #column2 {
+    width: 30%;
+		overflow-y: scroll;
+		position: relative;
+  }
+  #quotearea{
+    max-height: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+	#pdf{
+	  width: 30vw;
+	}
+
+  .game {
+    display: none;
+    height: 55vh;
+    width: 35vw;
+    text-align: center;
+  }
+  #column3 {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+	#chart-container {
+	  width: 100%;
+	  height: 20vh;
+	}
+	#brain-graph {
+	  width: 100%;
+	}
+}

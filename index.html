@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content= "width=device-width, initial-scale=1.0">
+    <?xml version="1.0" encoding="UTF-8" ?>
+    <title>Big Brain Time</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="/javascript/plotly.min.js"></script>
+    <body>
+      <!-- animated background -->
+      <canvas id="bgCanvas">
+      </canvas>
+      <script type="text/javascript" src="/javascript/background.js">
+      </script>
+      <!-- Header -->
+      <header>
+          <h1>Big Brain Stimulator</h1>
+      </header>
+      <main>
+        <div id="column1" class="column">
+
+          <div id="slideshowbox">
+
+
+
+              <!-- Full-width images with number and caption text -->
+              <div class="mySlides"><img src="images\bobbybrain.jpg"></div>
+              <!-- <div class="mySlides"><img src="images\bigbraintime.jpg" ></div> -->
+              <div class="mySlides"><img src="images\brainblast.gif" ></div>
+              <div class="mySlides"><img src="images\ajbrain.png" ></div>
+              <div class="mySlides"><img src="images\alienbrain.jpg" ></div>
+              <!-- <div class="mySlides"><img src="images\expandingbrain.jpg" ></div> -->
+              <div class="mySlides"><img src="images\profxbrainwave.jpg" ></div>
+              <div class="mySlides"><img src="images\sheenbrain.jpg" ></div>
+              <!-- <div class="mySlides"><img src="images\wojakchair.jpg" ></div> -->
+              <div class="mySlides"><img src="images\itchybrain.gif" ></div>
+              <div class="mySlides"><img src="images\mindblown.gif" ></div>
+              <!-- <div class="mySlides"><img src="images\sheldonbrain.gif" ></div> -->
+              <div class="mySlides"><img src="images\suchbig.gif" ></div>
+              <div class="mySlides"><img src="images\vaporbrain.gif" ></div>
+              <div class="mySlides"><img src="images\mebrain.gif" ></div>
+              <div class="mySlides"><img src="images\laserbrain.gif" ></div>
+              <div class="mySlides"><img src="images\brainzap.gif" ></div>
+              <div class="mySlides"><img src="images\neonbrainwave.gif" ></div>
+              <div class="mySlides"><img src="images\pinkneurons.gif" ></div>
+              <div class="mySlides"><img src="images\sparklebrain.gif" ></div>
+              <div class="mySlides"><img src="images\overload.gif" ></div>
+              <div class="mySlides"><img src="images\enlighten.gif" ></div>
+              <div class="mySlides"><img src="images\brainstream.gif" ></div>
+              <div class="mySlides"><img src="images\outerneurons.gif" ></div>
+              <div class="mySlides"><img src="images\rocko.gif" ></div>
+              <div class="mySlides"><img src="images\paperneuron.gif" ></div>
+              <div class="mySlides"><img src="images\papersynaptic.gif" ></div>
+              <div class="mySlides"><img src="images\brainactivity.gif" ></div>
+
+          </div>
+
+          <!-- quotes shennanigans -->
+          <div id="quote-wrapper">
+            <div id="quotearea">
+            <p class="txt">Enable the Quote Generator</p>
+            <div><span class="author"></span></div>
+          </div>
+          <div>
+            <form id="submit">
+              <label><input type="checkbox" id="quote-switch">Quote Generator</label>
+              <!-- <input type="text" class="txt"> -->
+              <div class="control">
+                <label for="rate">Speech Rate</label><input class="range" type="range" min="0.5" max="2" value="1" step="0.1" id="rate">
+                <div class="rate-value">1</div>
+
+              </div>
+              <div class="control">
+                <label for="pitch">Speech Pitch</label><input class="range" type="range" min="0" max="2" value="1" step="0.1" id="pitch">
+                <div class="pitch-value">1</div>
+
+              </div>
+              <div class="control">
+                <label for="interval">Quote Frequency</label><input class="numberinput" type="number" min="15" max="120" value="60" step="1" id="interval">
+                <!-- <div class="interval-value">10</div> -->
+
+              </div>
+              <div class="control">
+              <label for="voice">Voice
+
+            </label>
+            <select id="voice">
+
+            </select>
+          </div>
+            </form>
+          </div>
+          <script src="javascript/sounds.js"></script>
+          </div>
+
+          <div id="music-container">
+            <div class="button box">
+              <a href="#" id="electronic-button" class="button">Electronic</a>
+              <a href="#" id="classical-button" class="button">Classical</a>
+              <a href="#" id="jazz-button" class="button">Jazz</a>
+            </div>
+            <!-- embedded spotify -->
+            <iframe id="electronic" class="spotify" src="https://open.spotify.com/embed/playlist/37i9dQZF1DWXLeA8Omikj7&view=coverart"  frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <iframe id="classical" class="spotify" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXd5zUwdn6lPb" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <iframe id="jazz" class="spotify" src="https://open.spotify.com/embed/playlist/37i9dQZF1DWTR4ZOXTfd9K" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <script src="javascript/spotify.js"></script>
+          </div>
+
+        </div>
+        <div id="column2" class="column">
+
+          <div id="feed"><script src="//rss.bloople.net/?url=https%3A%2F%2Fwww.jneurosci.org%2Frss%2Fmfr.xml&showtitle=false&type=js"></script></div>
+          <div id="pdf">
+            <a>back</a>
+          </div>
+          <script src="/javascript/reader.js"></script>
+        </div>
+        <div id="column3" class="column">
+          <div id="chart-container">
+              <div id="brain-graph"></div>
+          </div>
+
+          <script type="text/javascript" src="/javascript/iq.js"></script>
+          <!-- brain games -->
+          <div id="game-container">
+
+            <div class="button-box">
+              <a href="#" id="chess-button" class="button">Chess</a>
+              <a href="#" id="crossword-button" class="button">Crossword</a>
+              <a href="#" id="sudoku-button" class="button">Sudoku</a>
+            </div>
+
+            <div id="game-box">
+              <!-- embedded chess -->
+              <iframe id="chess" class="game" src="https://fritz.chessbase.com"></iframe>
+              <!-- embed cross word -->
+              <div id="crossword" class="game"><script src="https://cdn.htmlgames.com/embed.js?game=DailyCrossword&amp;&amp;bgcolor=white"></script></div>
+              <!-- <iframe id="crossword" class="game" src='https://puzzel.org/en/crossword/embed?p=-L1v2n-yhlUB-bGDzGol' frameborder='0'></iframe> -->
+
+              <!-- embed sudoku -->
+              <IFRAME name="sudoku" id="sudoku" class="game" src='http://sudokugooglegadget.com/standard.aspx?bg=white' frameBorder='0' ></IFRAME>
+            </div>
+            <script type="text/javascript" src="/javascript/games.js"></script>
+          </div>
+        </div>
+      </main>
+
+
+
+
+
+<script type="text/javascript" src="/javascript/slideshow.js"></script>
+
+
+  </body>
+
+</html>
